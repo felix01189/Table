@@ -1,0 +1,48 @@
+{% comment %}
+totalCnt: <strong>{{ totalCnt }}</strong> boardList: <strong>{{ boardList|length }}</strong>
+{% endcomment %}
+
+<table cellspacing=1 width=700 border=0>
+    <tr>
+        <td>총 게시물수: {{ totalCnt }}</td>
+    </tr>
+</table>
+
+<table cellspacing=1 width=700 border=1>
+    <tr>
+        <td width=100><p align=center>이름</p></td>
+        <td width=320><p align=center>제목</p></td>
+        <td width=100><p align=center>등록일</p></td>
+    </tr>
+
+    {% if boardList %}
+        <ul>
+            {% for boardRow in boardList %}
+            <tr>
+            <td width=100><p align=center>{{ boardRow.writer }}</p></td>
+            <td width=320>
+                <p align=center>
+                    <a href="/showpage?memo_id={{ boardRow.id }}title="{{ boardRow.text }}">{{ boardRow.title }}
+                </p>
+           </td>
+            <td width=100><p align=center>{{ boardRow.created_date }}</p></td>
+            </tr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Data.</p>
+    {% endif %}
+</table>
+<table width=700>
+    <tr>
+        <td><input type=button value="회원가입"  OnClick="window.location='/register'">    </td>
+        </td>
+    </tr>
+</table>
+
+<table width=700>
+    <tr>
+        <td><input type=button value="글쓰기"  OnClick="window.location='/show_write_form'">    </td>
+        </td>
+    </tr>
+</table>

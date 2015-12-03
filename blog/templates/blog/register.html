@@ -1,0 +1,42 @@
+  <script language="javascript">
+      function writeCheck() {
+          var form = document.writeform;
+
+          if (!form.name.value)
+          {
+              alert("아이디를 적어주세요");
+              form.name.focus();
+              return;
+          }
+          if (!form.subject.value) {
+              alert("메일을 적어주세요");
+              form.subject.focus();
+              return;
+          }
+          if (!form.memo.value) {
+              alert("비밀번호를 입력해 주세요");
+              form.memo.focus();
+              return;
+          }
+          form.submit();
+      }
+  </script>
+
+  <html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+  <title>회원가입</title>
+  </head>
+  <table width=700 border=1 cellspacing=0 cellpadding=5>
+  <form name=writeform method=post action="/register/">
+  <tr><td><b>아이디</b></td><td><input type=text name=username size=50  maxlength=50></td></tr>
+  <tr><td><b>이메일</b></td><td><input type=text name=mail size=50  maxlength=50></td></tr>
+  <tr><td><b>비밀번호</b></td><td><input type=text name=password size=50  maxlength=50></td></tr>
+  </form>
+  </table>
+
+  <table width=700 border=1 cellspacing=0 cellpadding=0>
+  <tr><td>
+  <input type=button value="등록" OnClick="javascript:writeCheck();">
+  </td></tr>
+  </table>
