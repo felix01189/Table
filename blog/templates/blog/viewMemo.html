@@ -1,16 +1,18 @@
-<html>
+﻿<html>
 <head>
 <title>{{ boardData.writer }}</title>
 </head>  
 
-<table cellspacing = 1 cellpadding = 5 border = 1 width=500>
-    <tr><td><b>이름 </b></td><td> {{ boardData.writer }} </td></tr>
-    <tr><td><b>제목 </b></td><td> {{ boardData.title }} </td></tr>
-    <tr><td><b>내용 </b></td><td width=350> {{ boardData.text }} </td></tr>
+<table cellspacing = 1 cellpadding = 5 border = 1 width=600 align=center>
+    <tr><td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"><b>이름 </b></td><td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"> {{ boardData.writer }} </td></tr>
+    <tr><td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"><b>제목 </b></td><td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"> {{ boardData.title }} </td></tr>
+    <tr><td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"><b>내용 </b></td><td width=350 bgcolor="white" style="border:solid 4px #CCCCCC" > {{ boardData.text }} </td></tr>
 </table>
 
-  <tr><td>
+<table cellspacing = 1 cellpadding = 5 border = 1 width=600 align=center>
+  <tr><td width=70 bgcolor="white" style="border:solid 2px #CCCCCC" align=right>
   <input type=button value="목록" OnClick="window.location='/post_list'">
   </td></tr>
+</table>
 
 </html>

@@ -1,48 +1,117 @@
-{% comment %}
+﻿{% comment %}
 totalCnt: <strong>{{ totalCnt }}</strong> boardList: <strong>{{ boardList|length }}</strong>
 {% endcomment %}
+{% load staticfiles %}
 
-<table cellspacing=1 width=700 border=0>
+
+<html>
+
+<head>
+
+
+
+<title>Team5 Term Project</title>
+
+
+</head>
+
+
+
+
+<body>
+<body background="http://www.planwallpaper.com/static/images/cool-background.jpg">
+
+<p align="middle">
+<font color="white"face=돋움체 size=6 weight=500>
+5조 프로젝트
+</p>
+
+
+<hr noshade size=5>
+
+
+
+<table cellspacing=1 color=white width=700 border=0 >
     <tr>
-        <td>총 게시물수: {{ totalCnt }}</td>
+        <td><font color="white"> 총 게시물수: {{ totalCnt }}</td>
     </tr>
 </table>
 
-<table cellspacing=1 width=700 border=1>
+
+
+<table cellspacing=1 width=700 border=1 align=center>
     <tr>
-        <td width=100><p align=center>이름</p></td>
-        <td width=320><p align=center>제목</p></td>
-        <td width=100><p align=center>등록일</p></td>
+      <td width=100 bgcolor="white" style="border:solid 4px #CCCCCC"><p align=center>이름</p></td>
+      <td width=320 bgcolor="white" style="border:solid 4px #CCCCCC"><p align=center>제목</p></td>
+      <td width=200 bgcolor="white" style="border:solid 4px #CCCCCC"><p align=center>미리보기</p></td>
+      <td width=100 bgcolor="white" style="border:solid 4px #CCCCCC"><p align=center>등록일</p></td>
+      <td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"><p align=center>조회수</p></td>
     </tr>
 
     {% if boardList %}
         <ul>
             {% for boardRow in boardList %}
             <tr>
-            <td width=100><p align=center>{{ boardRow.writer }}</p></td>
-            <td width=320>
+            <td width=100 bgcolor="white" style="border:solid 4px #CCCCCC"><p align=center>{{ boardRow.writer }}</p></td>
+            <td width=320 bgcolor="white" style="border:solid 4px #CCCCCC">
                 <p align=center>
                     <a href="/showpage?memo_id={{ boardRow.id }}title="{{ boardRow.text }}">{{ boardRow.title }}
                 </p>
            </td>
-            <td width=100><p align=center>{{ boardRow.created_date }}</p></td>
+           <td width=200 bgcolor="white" style="border:solid 4px #CCCCCC"><p align=center>{{ boardRow.preview }}</p></td>
+           <td width=100 bgcolor="white" style="border:solid 4px #CCCCCC"><p align=center>{{ boardRow.created_date }}</p></td>
+           <td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"><p align=center>{{ boardRow.hits }}</p></td>
             </tr>
             {% endfor %}
         </ul>
     {% else %}
-        <p>No Data.</p>
+        <p><font color="white"face=돋움체 size=2 weight=500  >No Data.</p>
     {% endif %}
 </table>
 <table width=700>
+
+</table>
+
+<table width=700  align=center>
     <tr>
-        <td><input type=button value="회원가입"  OnClick="window.location='/register'">    </td>
+        <td><input type=button value="글쓰기" OnClick="window.location='/show_write_form'">    </td>
         </td>
     </tr>
 </table>
 
-<table width=700>
-    <tr>
-        <td><input type=button value="글쓰기"  OnClick="window.location='/show_write_form'">    </td>
-        </td>
-    </tr>
-</table>
+
+  <form name=writeform method=post action="/search/" align=center>
+
+
+<tr><td><input type=text name=searching size=50  maxlength=50></td></tr>
+
+  <script language="javascript">
+      function writeCheck() {
+          var form = document.writeform;
+
+          if (!form.searching.value)
+          {
+              alert("검색어를 입력해주세요");
+              form.name.focus();
+              return;
+          }
+          form.submit();
+      }
+  </script>
+
+
+
+<td ><input type=button value="검색" OnClick="javascript:writeCheck();">    </td>
+  </td>
+
+
+
+
+<center>
+<marquee direction=up scrollamount=3 scrolldelay=85 width=600  height=450  >
+<CENTER> <SPAN style="FILTER: shadow(color=white ,direction=135); HEIGHT: 30px"><FONT color=white size=6 face=궁서>글을 남겨주세요</FONT></SPAN> <IMG style="FILTER: fliph" src="http://cfile23.uf.tistory.com/image/225921335452E54C2B45CA"> </CENTER><BR>
+
+
+</body>
+
+</html>

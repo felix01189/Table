@@ -1,4 +1,4 @@
-  <script language="javascript">
+﻿  <script language="javascript">
       function writeCheck() {
           var form = document.writeform;
 
@@ -27,16 +27,16 @@
   <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
   <title>글쓰기</title>
   </head>
-  <table width=700 border=1 cellspacing=0 cellpadding=5>
+  <table width=600 border=1 cellspacing=1 cellpadding=5 align=center>
   <form name=writeform method=post action="/DoWriteBoard/">
-  <tr><td><b>이름</b></td><td><input type=text name=name size=50  maxlength=50></td></tr>
-  <tr><td><b>제목</b></td><td><input type=text name=subject size=50  maxlength=50></td></tr>
-  <tr><td><b>내용</b></td><td><textarea name=memo cols=50 rows=10></textarea></td></tr>
+  <tr><td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"><b>이름</b></td><td width=160 bgcolor="white" style="border:solid 4px #CCCCCC"><input type=text name=name size=60  maxlength=50></td></tr>
+  <tr><td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"><b>제목</b></td><td width=160 bgcolor="white" style="border:solid 4px #CCCCCC"><input type=text name=subject size=60  maxlength=50></td></tr>
+  <tr><td width=70 bgcolor="white" style="border:solid 4px #CCCCCC"><b>내용</b></td><td width=160 bgcolor="white" style="border:solid 4px #CCCCCC"><textarea name=memo cols=70 rows=10 ></textarea></td></tr>
   </form>
   </table>
 
-  <table width=700 border=1 cellspacing=0 cellpadding=0>
-  <tr><td>
+  <table width=600 border=1 cellspacing=0 cellpadding=0 align=center>
+  <tr><td align=right>
   <input type=button value="등록" OnClick="javascript:writeCheck();">
   </td></tr>
   </table>

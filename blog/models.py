@@ -6,6 +6,8 @@ class Post(models.Model):
     writer = models.CharField(max_length=50)
     title = models.CharField(max_length=200)
     text = models.TextField()
+    hits = models.IntegerField(default=0)
+    preview = models.CharField(max_length=30, default='')
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(

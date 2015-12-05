@@ -6,6 +6,6 @@ urlpatterns = [
     url(r'^show_write_form/$', views.show_write_form),
     url(r'^post_list/$', views.post_list),
     url(r'^DoWriteBoard/$', views.DoWriteBoard),
-    url(r'^register/$', views.register),
     url(r'^showpage/$', views.showpage),
+    url(r'^search/$', views.search),
 ]
